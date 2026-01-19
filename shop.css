@@ -66,7 +66,7 @@ span{
 }
 
 .navItem-center a li{
-    color:rgb(8, 155, 113);
+    color:rgb(236, 233, 223);
     opacity: 1;
     /* padding: 0; */
 }
@@ -416,4 +416,77 @@ p4{
 
 
 
+}
+
+
+
+
+body {
+  font-family: system-ui, sans-serif;
+}
+
+.booking {
+  max-width: 600px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.service {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.service:hover {
+  background: #f5f5f5;
+}
+
+.service.active {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.cart {
+  margin-top: 30px;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.cart ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.cart li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.datetime {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
 }

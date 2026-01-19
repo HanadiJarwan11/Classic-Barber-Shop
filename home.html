@@ -94,6 +94,51 @@
                     
                     <h2>Book Appointment</h2>
 
+
+<section class="booking">
+  <h2>Select Services</h2>
+
+  <div class="services">
+    <div class="service" data-name="Haircut" data-price="25">
+      <span>Haircut</span>
+      <strong>$25</strong>
+    </div>
+
+    <div class="service" data-name="Beard Trim" data-price="15">
+      <span>Beard Trim</span>
+      <strong>$15</strong>
+    </div>
+
+    <div class="service" data-name="Hot Towel Shave" data-price="30">
+      <span>Hot Towel Shave</span>
+      <strong>$30</strong>
+    </div>
+
+    <div class="service" data-name="Haircut + Beard" data-price="35">
+      <span>Haircut + Beard</span>
+      <strong>$35</strong>
+    </div>
+  </div>
+
+  <div class="cart">
+    <h3>Your Selection</h3>
+    <ul id="cart-items"></ul>
+    <p>Total: $<span id="total">0</span></p>
+
+    <div class="datetime">
+      <input type="date" required />
+      <input type="time" required />
+    </div>
+
+    <button>Continue</button>
+  </div>
+</section>
+
+
+
+
+                    
+
                         <label for="First-name" class="Second-name">    
                             <input type="text" name="First-name" id="First-name" placeholder="First Name">
                         </label>
@@ -183,6 +228,36 @@
         }
 
     </script>
+
+<script>
+const services = document.querySelectorAll(".service");
+const cart = document.getElementById("cart-items");
+const totalEl = document.getElementById("total");
+
+let total = 0;
+
+services.forEach(service => {
+  service.addEventListener("click", () => {
+    const name = service.dataset.name;
+    const price = parseInt(service.dataset.price);
+
+    service.classList.toggle("active");
+
+    if (service.classList.contains("active")) {
+      const li = document.createElement("li");
+      li.dataset.name = name;
+      li.innerHTML = `<span>${name}</span><span>$${price}</span>`;
+      cart.appendChild(li);
+      total += price;
+    } else {
+      document.querySelector(`[data-name="${name}"]`)?.remove();
+      total -= price;
+    }
+
+    totalEl.textContent = total;
+  });
+});
+</script>
 
     
 </body>
