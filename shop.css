@@ -1,0 +1,419 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+}
+.content{
+    background-image: url(barbershop/man_haircut.jpg);
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: rotateY(180deg);
+}
+.content::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.nav{
+    transform: rotateY(180deg);
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 100px;
+    z-index: 111;
+}
+
+.navItem-left {
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    margin-top: auto;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: "Lucida Handwriting";
+    color:rgb(236, 233, 223);
+}
+
+
+.navItem-center ul {
+    /* border: 3px solid rgb(248, 200, 137); */
+    margin-top: 40px;
+    /* outline: 3px solid rgb(252, 199, 66); */
+    outline-offset: 0.25em;
+
+}
+/* 
+span{
+    top: 20%;
+} */
+
+.navItem-center ul li{
+    transition: 0.2s
+}
+
+.navItem-center ul li:hover{
+    background-color: rgb(252, 199, 66);
+    color: black;
+
+}
+
+.navItem-center a li{
+    color:rgb(8, 155, 113);
+    opacity: 1;
+    /* padding: 0; */
+}
+
+/* .navItem-left img{
+    width: 150px;
+    height: 150px;
+} */
+
+
+
+
+.nav li{
+    display: inline-block;
+    padding: 20px;
+    list-style: none;
+    position: relative;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color:rgb(237, 233, 219);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.317);
+
+}
+
+
+.navItem-right ul {
+    margin-top: 40px;
+    outline: 3px solid rgb(252, 199, 66);
+    outline-offset: 0.25em;
+}
+
+.navItem-right ul li {
+    /* outline-offset: 2px solid rgb(255, 183, 0) ; */
+    padding: 20px;
+    text-align: center;
+    transition: 0.2s
+}
+
+.navItem-right ul li:hover{
+   background-color: rgb(252, 199, 66);
+   color: black;
+}
+
+
+.text{
+    position: relative;
+    top: 30%;
+    transform: rotateY(180deg);
+    margin-right: 50px;
+}
+
+ #text::after{
+    content: ".";
+    border-radius: 100%;
+    font-size: 4rem;
+    color: rgb(255, 183, 0);
+}
+
+h1{
+    color: rgb(255, 183, 0);
+    font-size: 3.5rem;   
+    text-transform: capitalize; 
+}
+
+p{
+    color:rgb(206, 203, 193);
+    padding: 20px 0 20px 0;
+    font-size: 1.6rem;    
+}
+
+
+
+/***** SERVICES *****/
+
+.services{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.881);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+h2{
+    color:rgb(223, 218, 202);
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    justify-content: center;
+}
+p2{
+    padding: 10px;    
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: aliceblue;  
+
+}
+
+.circle1 ,.circle2, .circle3{
+    display: inline-block;
+    border-radius: 50%;
+    background-color: rgb(255, 183, 0);
+    margin-top: 30px;
+
+}
+
+.circle1{
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 8px;
+    height: 8px;
+}
+.circle2{
+    margin-right: 0px;
+    margin-left: 0;
+    width: 13px;
+    height: 13px;
+}
+
+.circle3{
+    margin-right: 10px;
+    margin-left: 10px;
+    width: 18px;
+    height: 18px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: center;
+}
+
+.cards {
+    animation: fade-in linear forwards;
+    animation-timeline: view() ;
+    scale: .8; opacity: 0;
+    animation-range:entry;
+    /* animation-range-start:cover ; */
+    /* animation-range:200px 300px; */
+}
+
+@keyframes fade-in{
+    /* from {scale: .8; opacity: 0;} */
+    to {scale: 1; opacity: 1;}
+}
+
+.cards{
+    width: 240px;
+    overflow: hidden;
+    background-color: rgb(227, 227, 227);
+    margin: 20px;
+    box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.667);
+    border-radius: 10px;
+    /* border-top-right-radius: 10px;
+    border-top-left-radius: 10px; */
+}
+
+.cards img{
+    width: 100%;
+}
+
+h3,  p3{
+    margin: 10px;
+    color: rgb(0, 0, 0);
+}
+
+p3{
+    margin:30px 0 0 10px;
+}
+
+
+.names{
+    display: inline;
+}
+
+
+/***** contacts form *****/
+.contacts{
+    width: 100%;
+    height: 100vh;
+    /* margin-top: 100px; */
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    background-image: url(/barbershop/paint3.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.contact-container{
+    width:700px;
+    height: 70%;
+    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.758);
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    border: 2px solid;
+    box-shadow: 5px 10px  18px rgba(0, 0, 0, 0.948);
+}
+
+form, h2{
+    font-size: 30px;
+    padding: 0;
+    color: #121212;
+}
+
+/* .contacts::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+} */
+
+
+form{
+    /* padding: 60px; */
+    font-size: 18px;
+    /* display: flex; */
+    flex-wrap: wrap;
+}
+
+
+::placeholder{
+    color: #3d3d3d;
+    bottom:0;
+    position: absolute;
+    
+}
+
+
+input {
+    padding:50px 30px 0px 30px;
+    font-size: 16px;
+    width: 250px;
+    left: 0;
+    position: relative;
+    border: none;
+    background-color: inherit;
+    outline: none;
+    border-bottom:solid 2px #101010;
+    }
+
+.saloon-container{
+    /* to be continued  */
+    position: relative;
+    vertical-align:middle;
+
+}
+
+
+
+
+
+
+
+
+
+.footer{
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+    bottom: 0;
+    position: relative;
+    justify-content:space-around ;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+.calls, .location, .open_time {
+margin: 20px;
+}
+
+h4{
+    color: rgb(249, 197, 65);
+    padding-bottom: 10px;
+    font-size: 1rem;
+}
+
+p4{
+    color: rgb(191, 191, 191);
+    font-size: 0.9rem;
+}
+
+.hamburger {
+    display: none;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    padding-right: 80px;
+    padding-top: 50px;
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #101010;
+
+}
+
+/* @keyframes mySlides {
+    from {opacity: .4}
+    to {opacity: 1}
+  } */
+
+/***** RESPONSIVE *****/
+
+@media all and (max-width:800px) {
+    .navItem-center ,.navItem-right{
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        position: relative;
+
+    }
+
+    .navItem-center{
+          position: relative;
+
+    }
+
+
+
+
+}
