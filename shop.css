@@ -127,7 +127,8 @@ span{
 
 h1{
     color: rgb(255, 183, 0);
-    font-size: 3.5rem;   
+    /* font-size: 3.5rem;    */
+        font-size: clamp(18px, 7.5vw, 74px);
     text-transform: capitalize; 
 }
 
@@ -143,7 +144,7 @@ p{
 
 .services{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.881);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -192,20 +193,11 @@ p2{
     height: 18px;
 }
 
-.container{
+.container {
     display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    justify-content: center;
-}
-
-.cards {
-    animation: fade-in linear forwards;
-    animation-timeline: view() ;
-    scale: .8; opacity: 0;
-    animation-range:entry;
-    /* animation-range-start:cover ; */
-    /* animation-range:200px 300px; */
+    flex-wrap: wrap;       /* allows cards to go to next line */
+    justify-content: center; 
+    gap: 16px;             /* space between cards */
 }
 
 @keyframes fade-in{
@@ -213,25 +205,50 @@ p2{
     to {scale: 1; opacity: 1;}
 }
 
-.cards{
-    width: 240px;
-    overflow: hidden;
+.cards {
+    flex: 1 1 250px;       /* grow, shrink, start at 250px */
+    min-width: 200px;      /* prevents shrinking too much */
+    max-width: 250px;       /* never overflow container */
     background-color: rgb(227, 227, 227);
-    margin: 20px;
-    box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.667);
-    border-radius: 10px;
-    /* border-top-right-radius: 10px;
-    border-top-left-radius: 10px; */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+
+    animation: fade-in linear forwards;
+    animation-timeline: view();
+    animation-range: entry;
+    scale: 0.8;
+    opacity: 0;
 }
 
-.cards img{
+
+
+.cards img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+    /* display: block; */
 }
+
 
 h3,  p3{
     margin: 10px;
     color: rgb(0, 0, 0);
 }
+
+.cart h3, p{
+    color: #ddd;
+}
+
+.datetime input{
+    color: #ddd;
+}
+ #First-name::placeholder, #Second-name::placeholder, #Email::placeholder, #phone::placeholder, #Email::placeholder{
+    color: #ddd;
+    /* border-bottom:2px solid #ddd; */
+ }
 
 p3{
     margin:30px 0 0 10px;
@@ -245,32 +262,49 @@ p3{
 
 /***** contacts form *****/
 .contacts{
-    width: 100%;
-    height: 100vh;
-    /* margin-top: 100px; */
+
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     align-items: center;
+    /* background-color: rgba(171, 45, 45, 0.758); */   
     background-image: url(/barbershop/paint3.avif);
     background-size: cover;
     background-repeat: no-repeat;
-    
 }
+
 .contact-container{
-    width:700px;
-    height: 70%;
+    width:80%; 
+    /* height: 70%;*/
     justify-content: center;
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    background-color: rgba(255, 255, 255, 0.758);
+    /* flex-wrap: wrap;/ */
     text-align: center;
     align-items: center;
+    background-color: rgba(17, 17, 17, 0.795);
     border-radius: 20px;
     border: 2px solid;
     box-shadow: 5px 10px  18px rgba(0, 0, 0, 0.948);
+}
+
+
+
+
+
+.description {
+    padding: 1rem;
+}
+
+.description h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.description p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #333;
 }
 
 form, h2{
@@ -279,15 +313,9 @@ form, h2{
     color: #121212;
 }
 
-/* .contacts::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-} */
-
+label{
+    color: #ddd;
+}
 
 form{
     /* padding: 60px; */
@@ -332,31 +360,7 @@ input {
 
 
 
-.footer{
-    display: flex;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
-    bottom: 0;
-    position: relative;
-    justify-content:space-around ;
-    flex-wrap: wrap;
-    width: 100%;
-    background-color: rgb(0, 0, 0);
-}
 
-.calls, .location, .open_time {
-margin: 20px;
-}
-
-h4{
-    color: rgb(249, 197, 65);
-    padding-bottom: 10px;
-    font-size: 1rem;
-}
-
-p4{
-    color: rgb(191, 191, 191);
-    font-size: 0.9rem;
-}
 
 .hamburger {
     display: none;
@@ -386,8 +390,6 @@ p4{
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: #101010;
-
 }
 
 /* @keyframes mySlides {
@@ -418,23 +420,21 @@ p4{
 
 }
 
-
-
-
-body {
-  font-family: system-ui, sans-serif;
-}
-
 .booking {
-  max-width: 600px;
+  width: 100%;
   margin: auto;
+  justify-content: space-between;
+  display: flex;
   padding: 40px 20px;
+  flex-wrap: wrap;
 }
 
-.services {
+.booking .services {
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+  background-color: inherit;
 }
 
 .service {
@@ -445,6 +445,7 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: 0.2s;
+  background-color: #ddd;
 }
 
 .service:hover {
@@ -458,9 +459,9 @@ body {
 }
 
 .cart {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   padding: 20px;
-  border-top: 1px solid #ddd;
+  width: 50%;
 }
 
 .cart ul {
@@ -489,4 +490,36 @@ button {
   border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
+}
+
+
+
+
+
+
+
+.footer{
+    display: flex;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;   
+    bottom: 0;
+    position: relative;
+    justify-content:space-around ;
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+}
+
+.calls, .location, .open_time {
+margin: 20px;
+}
+
+h4{
+    color: rgb(249, 197, 65);
+    padding-bottom: 10px;
+    font-size: 1rem;
+}
+
+p4{
+    color: rgb(191, 191, 191);
+    font-size: 0.9rem;
 }
